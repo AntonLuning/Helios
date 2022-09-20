@@ -5,11 +5,11 @@ project "Helios"
     staticruntime "Off"
     systemversion "latest"
 
-    targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("%{wks.location}/bin-obj/" .. outputdir .. "/%{prj.name}")
+    targetdir (buildDir)
+	objdir (buildObjDir)
 
-    pchheader "hlpch.h"
-    pchsource "Source/hlpch.cpp"
+    pchheader "HeliosPCH.h"
+    pchsource "Source/HeliosPCH.cpp"
 
     files {
         "Source/**.h",
@@ -17,28 +17,33 @@ project "Helios"
     }
 
     includedirs {
-        "Source",
-        "Vendor/spdlog/include",
-        "Vendor/glfw/include"
+        "%{wks.location}/%{includeDirs.Helios}",
+        "%{wks.location}/%{includeDirs.spdlog}",
+        "%{wks.location}/%{includeDirs.GLFW}"
+    }
+    
+    links {
+        "GLFW",
+        "opengl32.lib"
     }
 
-    defines { "HL_BUILD_DLL" }
+    defines { "HELIOS_BUILD_DLL" }
 
     postbuildcommands {
-        ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Ceres/\"")
+        ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputDir .. "/Ceres/\"")
     }
 
     filter "configurations:Debug"
-        defines { "HL_DEBUG" }
+        defines { "HELIOS_DEBUG" }
         runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
-        defines { "HL_RELEASE" }
+        defines { "HELIOS_RELEASE" }
         runtime "Release"
         optimize "On"
 
-    filter "configurations:Dist"
-        defines { "HL_DIST" }
+    filter "configurations:Distribution"
+        defines { "HELIOS_DISTRIBUTION" }
         runtime "Release"
-        optimize "On"
+        optimize "Full"

@@ -5,8 +5,8 @@ project "Ceres"
     staticruntime "Off"
     systemversion "latest"
 
-    targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("%{wks.location}/bin-obj/" .. outputdir .. "/%{prj.name}")
+    targetdir (buildDir)
+	objdir (buildObjDir)
 
     files {
         "Source/**.h",
@@ -14,12 +14,9 @@ project "Ceres"
     }
 
     includedirs {
-        "%{wks.location}/Helios/Vendor/spdlog/include",
-		"%{wks.location}/Helios/Source"
-    }
-
-    defines {
-        "HL_PLATFORM_WINDOWS"
+        "%{wks.location}/%{includeDirs.Helios}",
+        "%{wks.location}/%{includeDirs.spdlog}",
+        "%{wks.location}/%{includeDirs.GLFW}"
     }
 
     links {
@@ -27,16 +24,16 @@ project "Ceres"
     }
 
     filter "configurations:Debug"
-        defines { "HL_DEBUG" }
+        defines { "HELIOS_DEBUG" }
         runtime "Debug"
         symbols "On"
 
     filter "configurations:Release"
-        defines { "HL_RELEASE" }
+        defines { "HELIOS_RELEASE" }
         runtime "Release"
         optimize "On"
 
-    filter "configurations:Dist"
-        defines { "HL_DIST" }
+    filter "configurations:Distribution"
+        defines { "HELIOS_DISTRIBUTION" }
         runtime "Release"
-        optimize "On"
+        optimize "Full"

@@ -2,8 +2,8 @@
 
 // For use by Helios applications
 
-#include "Core/Application.h"
-#include "Core/Log.h"
+#include "Core/Helios/Application.h"
+#include "Core/Helios/Log.h"
 
 // --- Entry Point --------------
 #include "Core/EntryPoint.h"
