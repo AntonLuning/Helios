@@ -14,9 +14,9 @@ project "Ceres"
     }
 
     includedirs {
-        "%{wks.location}/%{includeDirs.Helios}",
-        "%{wks.location}/%{includeDirs.spdlog}",
-        "%{wks.location}/%{includeDirs.GLFW}"
+        "%{includeDirs.Helios}",
+        "%{includeDirs.spdlog}",
+        "%{includeDirs.GLFW}"
     }
 
     links {

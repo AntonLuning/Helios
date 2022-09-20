@@ -8,11 +8,13 @@ buildDir = "%{wks.location}/bin/" .. outputDir .. "/%{prj.name}"
 buildObjDir = "%{wks.location}/bin-obj/" .. outputDir .. "/%{prj.name}"
 
 includeDirs = {}
-includeDirs["Helios"] = "Helios/Source"
-includeDirs["spdlog"] = "Helios/vendor/spdlog/include"
-includeDirs["GLFW"] = "Helios/vendor/glfw/include"
+includeDirs["Helios"] = "%{wks.location}/Helios/Source"
+includeDirs["spdlog"] = "%{wks.location}/Vendor/spdlog/include"
+includeDirs["GLFW"] = "%{wks.location}/Vendor/glfw/include"
 
-include "Helios/Vendor/glfw"
+group "Dependencies"
+    include "Vendor/glfw"
+group ""
 
 include "Helios"
 include "Ceres"
