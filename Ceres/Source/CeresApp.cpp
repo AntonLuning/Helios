@@ -3,13 +3,9 @@
 class Ceres : public Helios::Application
 {
 public:
-	Ceres()
-	{
-	}
+	Ceres()	{}
 
-	~Ceres()
-	{
-	}
+	~Ceres() {}
 };
 
 Helios::Application* Helios::CreateApplication()

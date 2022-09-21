@@ -2,6 +2,9 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Events/WindowEvent.h"
+#include "Events/KeyEvent.h"
+#include "Events/MouseEvent.h"
 
 #include "GLFW/glfw3.h"
 

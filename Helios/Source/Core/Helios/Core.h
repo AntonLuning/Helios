@@ -12,8 +12,8 @@
 
 
 #ifdef HELIOS_ENABLE_ASSERTS
-	#define HELIOS_ASSERT(x, ...) { if(!x) HELIOS_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); }
-	#define HELIOS_CORE_ASSERT(x, ...) { if(!x) HELIOS_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); }
+	#define HELIOS_ASSERT(x, ...) { if(!(x)) { HELIOS_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define HELIOS_CORE_ASSERT(x, ...) { if(!(x)) { HELIOS_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define HELIOS_ASSERT(x, ...)
 	#define HELIOS_CORE_ASSERT(x, ...)

@@ -31,8 +31,8 @@ namespace Helios {
 	class HELIOS_API WindowMovedEvent : public Event
 	{
 	public:
-		WindowMovedEvent(float x, float y)
-			: m_X(x), m_Y(y) {}
+		WindowMovedEvent(float xPos, float yPos)
+			: m_X(xPos), m_Y(yPos) {}
 
 		inline float GetX() const { return m_X; }
 		inline float GetY() const { return m_Y; }
@@ -77,7 +77,7 @@ namespace Helios {
 	public:
 		WindowCloseEvent() {}
 
-		EVENT_CLASS_TYPE(WindowResize)
+		EVENT_CLASS_TYPE(WindowClose)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 

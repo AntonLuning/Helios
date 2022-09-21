@@ -56,11 +56,11 @@ namespace Helios {
 	class HELIOS_API MouseMovedEvent : public Event
 	{
 	public:
-		MouseMovedEvent(float x, float y)
-			: m_MouseX(x), m_MouseY(y) {}
+		MouseMovedEvent(float xPos, float yPos)
+			: m_X(xPos), m_Y(yPos) {}
 
-		inline float GetX() const { return m_MouseX; }
-		inline float GetY() const { return m_MouseY; }
+		inline float GetX() const { return m_X; }
+		inline float GetY() const { return m_Y; }
 
 		std::string ToString() const override
 		{
@@ -73,7 +73,7 @@ namespace Helios {
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 
 	private:
-		float m_MouseX, m_MouseY;
+		float m_X, m_Y;
 	};
 
 
