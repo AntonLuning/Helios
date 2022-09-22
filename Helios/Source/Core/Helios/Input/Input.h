@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core.h"
+#include "Core/Helios/Core.h"
 
 namespace Helios {
 
@@ -10,6 +10,7 @@ namespace Helios {
 		static bool IsKeyPressed(uint32_t keycode);
 
 		static bool IsMouseButtonPressed(uint32_t button);
+
 		static std::pair<float, float> GetMousePosition();
 		static float GetMouseX();
 		static float GetMouseY();
