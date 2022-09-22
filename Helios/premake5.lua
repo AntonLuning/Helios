@@ -19,15 +19,20 @@ project "Helios"
     includedirs {
         "%{includeDirs.Helios}",
         "%{includeDirs.spdlog}",
-        "%{includeDirs.GLFW}"
+        "%{includeDirs.GLFW}",
+        "%{includeDirs.glad}"
     }
     
     links {
         "GLFW",
+        "glad",
         "opengl32.lib"
     }
 
-    defines { "HELIOS_BUILD_DLL" }
+    defines { 
+        "HELIOS_BUILD_DLL", 
+        "GLFW_INCLUDE_NONE"
+    }
 
     postbuildcommands {
         ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputDir .. "/Ceres/\"")
@@ -36,14 +41,17 @@ project "Helios"
     filter "configurations:Debug"
         defines { "HELIOS_DEBUG" }
         runtime "Debug"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines { "HELIOS_RELEASE" }
         runtime "Release"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Distribution"
         defines { "HELIOS_DISTRIBUTION" }
         runtime "Release"
+        buildoptions "/MD"
         optimize "Full"

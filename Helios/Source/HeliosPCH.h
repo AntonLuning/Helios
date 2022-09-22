@@ -13,5 +13,7 @@
 #include <unordered_set>
 
 #include <Windows.h>
+#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 #include "Core/Helios/Log.h"
