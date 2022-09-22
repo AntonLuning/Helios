@@ -25,7 +25,7 @@ namespace Helios {
 		MouseButtonPressedEvent(uint32_t button)
 			: MouseButtonEvent(button) {}
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseButtonPressed: " << GetMouseButton();
@@ -42,7 +42,7 @@ namespace Helios {
 		MouseButtonReleasedEvent(uint32_t button)
 			: MouseButtonEvent(button) {}
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseButtonReleased: " << GetMouseButton();
@@ -62,7 +62,7 @@ namespace Helios {
 		inline float GetX() const { return m_X; }
 		inline float GetY() const { return m_Y; }
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseMoved: " << GetX() << ", " << GetY();
@@ -86,7 +86,7 @@ namespace Helios {
 		inline float GetXOffset() const { return m_XOffset; }
 		inline float GetYOffset() const { return m_YOffset; }
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseScrolled: " << GetXOffset() << ", " << GetYOffset();

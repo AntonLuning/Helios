@@ -43,17 +43,14 @@ project "Helios"
     filter "configurations:Debug"
         defines { "HELIOS_DEBUG" }
         runtime "Debug"
-        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines { "HELIOS_RELEASE" }
         runtime "Release"
-        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Distribution"
         defines { "HELIOS_DISTRIBUTION" }
         runtime "Release"
-        buildoptions "/MD"
         optimize "Full"

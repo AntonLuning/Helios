@@ -38,6 +38,8 @@ namespace Helios {
 
 		inline void SetEventCallback(const EventCallbackFn& callback) { m_Data.EventCallback = callback; }
 
+		inline GLFWwindow* Get() const { return m_Window; }
+
 	private:
 		void Init(const WindowProps& props);
 		void Shutdown();

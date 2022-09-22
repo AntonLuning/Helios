@@ -14,10 +14,10 @@ namespace Helios {
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach() override;
-		void OnDetach() override;
-		void OnUpdate() override;
-		void OnEvent(Event& event) override;
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
+		virtual void OnUpdate() override;
+		virtual void OnEvent(Event& event) override;
 
 	private:
 		bool OnWindowResizeEvent(WindowResizeEvent& e);

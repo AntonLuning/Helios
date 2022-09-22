@@ -27,7 +27,7 @@ namespace Helios {
 
 		inline bool IsRepeated() const { return m_IsRepeat; }
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "KeyPressed: " << GetKeyCode();
@@ -49,7 +49,7 @@ namespace Helios {
 		KeyReleasedEvent(uint32_t keyCode)
 			: KeyEvent(keyCode) {}
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "KeyReleased: " << GetKeyCode();
@@ -66,7 +66,7 @@ namespace Helios {
 		KeyTypedEvent(uint32_t keyCode)
 			: KeyEvent(keyCode) {}
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "KeyTyped: " << GetKeyCode();

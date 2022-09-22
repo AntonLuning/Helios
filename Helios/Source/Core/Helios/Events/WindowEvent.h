@@ -13,7 +13,7 @@ namespace Helios {
 		inline uint16_t GetWidth() const { return m_Width; }
 		inline uint16_t GetHeight() const { return m_Height; }
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "WindowResize: " << GetWidth() << ", " << GetHeight();
@@ -37,7 +37,7 @@ namespace Helios {
 		inline float GetX() const { return m_X; }
 		inline float GetY() const { return m_Y; }
 
-		std::string ToString() const override
+		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "WindowMoved: " << GetX() << ", " << GetY();

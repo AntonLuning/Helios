@@ -13,7 +13,7 @@ public:
 
 	void OnEvent(Helios::Event& event) override
 	{
-		HELIOS_TRACE("{0}", event);
+		//HELIOS_TRACE("{0}", event);
 	}
 };
 
