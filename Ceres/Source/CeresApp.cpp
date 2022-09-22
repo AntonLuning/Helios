@@ -8,7 +8,7 @@ public:
 
 	void OnUpdate() override
 	{
-		HELIOS_INFO("ExampleLayer::Update");
+		
 	}
 
 	void OnEvent(Helios::Event& event) override
@@ -23,6 +23,7 @@ public:
 	Ceres()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Helios::ImGuiLayer());
 	}
 
 	~Ceres() {}

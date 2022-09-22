@@ -17,7 +17,8 @@ project "Ceres"
         "%{includeDirs.Helios}",
         "%{includeDirs.spdlog}",
         "%{includeDirs.GLFW}",
-        "%{includeDirs.glad}"
+        "%{includeDirs.glad}",
+        "%{includeDirs.ImGui}"
     }
 
     links {

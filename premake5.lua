@@ -12,10 +12,12 @@ includeDirs["Helios"] = "%{wks.location}/Helios/Source"
 includeDirs["spdlog"] = "%{wks.location}/Vendor/spdlog/include"
 includeDirs["GLFW"] = "%{wks.location}/Vendor/glfw/include"
 includeDirs["glad"] = "%{wks.location}/Vendor/glad/include"
+includeDirs["ImGui"] = "%{wks.location}/Vendor/imgui"
 
 group "Dependencies"
     include "Vendor/glfw"
     include "Vendor/glad"
+    include "Vendor/imgui"
 group ""
 
 include "Helios"

@@ -6,13 +6,13 @@
 
 namespace Helios {
 
-#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+#define BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
 
 	enum class EventType
 	{
 		None = 0,
 		WindowResize, WindowMoved, WindowFocus, WindowLostFocus, WindowClose,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 

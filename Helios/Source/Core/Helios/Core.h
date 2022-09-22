@@ -4,6 +4,7 @@
 	#define HELIOS_ENABLE_ASSERTS
 #endif // HELIOS_DEBUG
 
+
 #ifdef HELIOS_BUILD_DLL
 	#define HELIOS_API __declspec(dllexport)
 #else

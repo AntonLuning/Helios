@@ -20,12 +20,14 @@ project "Helios"
         "%{includeDirs.Helios}",
         "%{includeDirs.spdlog}",
         "%{includeDirs.GLFW}",
-        "%{includeDirs.glad}"
+        "%{includeDirs.glad}",
+        "%{includeDirs.ImGui}"
     }
     
     links {
         "GLFW",
         "glad",
+        "ImGui",
         "opengl32.lib"
     }
 

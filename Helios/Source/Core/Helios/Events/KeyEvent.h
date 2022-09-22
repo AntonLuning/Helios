@@ -59,4 +59,21 @@ namespace Helios {
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
+
+	class HELIOS_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(uint32_t keyCode)
+			: KeyEvent(keyCode) {}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTyped: " << GetKeyCode();
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
+
 }
