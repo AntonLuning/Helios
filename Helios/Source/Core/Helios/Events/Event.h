@@ -27,7 +27,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API Event
+	class Event
 	{
 	public:
 		bool Handled = false;

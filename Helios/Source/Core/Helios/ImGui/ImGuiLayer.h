@@ -8,7 +8,7 @@
 
 namespace Helios {
 
-	class HELIOS_API ImGuiLayer : public Layer
+	class ImGuiLayer : public Layer
 	{
 	public:
 #ifdef HELIOS_DISTRIBUTION

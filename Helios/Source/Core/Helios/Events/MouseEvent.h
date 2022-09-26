@@ -4,7 +4,7 @@
 
 namespace Helios {
 
-	class HELIOS_API MouseButtonEvent : public Event
+	class MouseButtonEvent : public Event
 	{
 	public:
 		inline uint32_t GetMouseButton() const { return m_Button; }
@@ -19,7 +19,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API MouseButtonPressedEvent : public MouseButtonEvent
+	class MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(uint32_t button)
@@ -38,7 +38,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(uint32_t button)
@@ -57,7 +57,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API MouseMovedEvent : public Event
+	class MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float xPos, float yPos)
@@ -83,7 +83,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API MouseScrolledEvent : public Event
+	class MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)

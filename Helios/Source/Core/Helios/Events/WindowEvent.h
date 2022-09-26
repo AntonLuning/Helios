@@ -4,7 +4,7 @@
 
 namespace Helios {
 
-	class HELIOS_API WindowResizeEvent : public Event
+	class WindowResizeEvent : public Event
 	{
 	public:
 		WindowResizeEvent(uint16_t width, uint16_t height)
@@ -30,7 +30,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API WindowMovedEvent : public Event
+	class WindowMovedEvent : public Event
 	{
 	public:
 		WindowMovedEvent(float xPos, float yPos)
@@ -56,7 +56,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API WindowFocusEvent : public Event
+	class WindowFocusEvent : public Event
 	{
 	public:
 		WindowFocusEvent() {}
@@ -66,7 +66,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API WindowLostFocusEvent : public Event
+	class WindowLostFocusEvent : public Event
 	{
 	public:
 		WindowLostFocusEvent() {}
@@ -76,7 +76,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API WindowCloseEvent : public Event
+	class WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() {}

@@ -1,7 +1,7 @@
 workspace "Helios"
-    architecture "x86_64"
-    startproject "Ceres"
-    configurations { "Debug", "Release", "Distribution" }
+	architecture "x86_64"
+	startproject "Ceres"
+	configurations { "Debug", "Release", "Distribution" }
 
 outputDir = "%{cfg.buildcfg}-%{cfg.architecture}"
 buildDir = "%{wks.location}/bin/" .. outputDir .. "/%{prj.name}"
@@ -16,9 +16,9 @@ includeDirs["glad"] = "%{wks.location}/Vendor/glad/include"
 includeDirs["ImGui"] = "%{wks.location}/Vendor/imgui"
 
 group "Dependencies"
-    include "Vendor/glfw"
-    include "Vendor/glad"
-    include "Vendor/imgui"
+	include "Vendor/glfw"
+	include "Vendor/glad"
+	include "Vendor/imgui"
 group ""
 
 include "Helios"

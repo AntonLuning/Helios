@@ -7,7 +7,7 @@
 
 namespace Helios {
 
-	class HELIOS_API Log
+	class Log
 	{
 		using Logger = std::shared_ptr<spdlog::logger>;
 

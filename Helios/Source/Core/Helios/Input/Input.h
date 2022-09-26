@@ -4,7 +4,7 @@
 
 namespace Helios {
 
-	class HELIOS_API Input
+	class Input
 	{
 	public:
 		static bool IsKeyPressed(uint32_t keycode);

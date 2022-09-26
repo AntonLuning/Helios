@@ -1,25 +1,24 @@
 project "glad"
-    kind "StaticLib"
-    language "C"
-    staticruntime "Off"
-    systemversion "latest"
+	kind "StaticLib"
+	language "C"
+	staticruntime "On"
+	systemversion "latest"
 
-    targetdir (buildDir)
+	targetdir (buildDir)
 	objdir (buildObjDir)
 
-    files {
-        "src/glad.c",
-        "include/glad/glad.h",
-        "include/KHR/khrplatform.h"
-    }
+	files {
+		"src/glad.c",
+		"include/glad/glad.h",
+		"include/KHR/khrplatform.h"
+	}
 
-    includedirs { "include" }
+	includedirs { "include" }
 
-    filter "configurations:Debug"
-        runtime "Debug"
+	filter "configurations:Debug"
+		runtime "Debug"
+		symbols "On"
 
-    filter "configurations:Release"
-        runtime "Release"
-
-    filter "configurations:Distribution"
-        runtime "Release"
+	filter "configurations:Release"
+		runtime "Release"
+		optimize "On"

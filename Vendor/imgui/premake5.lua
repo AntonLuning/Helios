@@ -1,15 +1,15 @@
 project "ImGui"
-    kind "StaticLib"
-    language "C++"
-    cppdialect "C++17"
-    staticruntime "Off"
-    systemversion "latest"
+	kind "StaticLib"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "On"
+	systemversion "latest"
 
-    targetdir (buildDir)
+	targetdir (buildDir)
 	objdir (buildObjDir)
 
-    files {
-        "imconfig.h",
+	files {
+		"imconfig.h",
 		"imgui.h",
 		"imgui.cpp",
 		"imgui_draw.cpp",
@@ -20,17 +20,12 @@ project "ImGui"
 		"imstb_textedit.h",
 		"imstb_truetype.h",
 		"imgui_demo.cpp"
-    }
+	}
 
-    filter "configurations:Debug"
-        runtime "Debug"
-        symbols "On"
+	filter "configurations:Debug"
+		runtime "Debug"
+		symbols "On"
 
-    filter "configurations:Release"
-        runtime "Release"
-        optimize "On"
-
-    filter "configurations:Distribution"
-        runtime "Release"
-        optimize "Full"
-        symbols "Off"
+	filter "configurations:Release"
+		runtime "Release"
+		optimize "On"

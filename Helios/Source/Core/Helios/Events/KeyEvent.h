@@ -4,7 +4,7 @@
 
 namespace Helios {
 
-	class HELIOS_API KeyEvent : public Event
+	class KeyEvent : public Event
 	{
 	public:
 		inline uint32_t GetKeyCode() const { return m_KeyCode; }
@@ -19,7 +19,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API KeyPressedEvent : public KeyEvent
+	class KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(uint32_t keyCode, bool isRepeat)
@@ -45,7 +45,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API KeyReleasedEvent : public KeyEvent
+	class KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(uint32_t keyCode)
@@ -64,7 +64,7 @@ namespace Helios {
 	};
 
 
-	class HELIOS_API KeyTypedEvent : public KeyEvent
+	class KeyTypedEvent : public KeyEvent
 	{
 	public:
 		KeyTypedEvent(uint32_t keyCode)
