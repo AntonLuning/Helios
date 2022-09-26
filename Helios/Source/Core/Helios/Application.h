@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Window.h"
 #include "LayerStack.h"
+#include "ImGui/ImGuiLayer.h"
 
 namespace Helios {
 
@@ -27,8 +28,9 @@ namespace Helios {
 
 	private:
 		std::unique_ptr<Window> m_Window;
-		bool m_Running = true;
 		LayerStack m_LayerStack;
+		ImGuiLayer* m_ImGuiLayer;
+		bool m_Running = true;
 
 		static Application* s_Instance;
 	};

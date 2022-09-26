@@ -11,28 +11,16 @@ namespace Helios {
 	class HELIOS_API ImGuiLayer : public Layer
 	{
 	public:
-		ImGuiLayer();
-		~ImGuiLayer();
+		ImGuiLayer()
+			: Layer("ImGuiLayer") {}
+		~ImGuiLayer() {}
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;
-		virtual void OnUpdate() override;
-		virtual void OnEvent(Event& event) override;
+		virtual void OnImGuiRender() override;
 
-	private:
-		bool OnWindowResizeEvent(WindowResizeEvent& e);
-		bool OnWindowMovedEvent(WindowMovedEvent& e);			// Remove?
-		bool OnWindowFocusEvent(WindowFocusEvent& e);			// Remove?
-		bool OnWindowLostFocusEvent(WindowLostFocusEvent& e);	// Remove?
-		
-		bool OnKeyPressedEvent(KeyPressedEvent& e);
-		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
-		bool OnKeyTypedEvent(KeyTypedEvent& e);
-		
-		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
-		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
-		bool OnMouseMovedEvent(MouseMovedEvent& e);
-		bool OnMouseScrolledEvent(MouseScrolledEvent& e);
+		void Begin();
+		void End();
 
 	private:
 		float m_Time = 0.0f;
