@@ -19,6 +19,7 @@ project "Helios"
     includedirs {
         "%{includeDirs.Helios}",
         "%{includeDirs.spdlog}",
+        "%{includeDirs.glm}",
         "%{includeDirs.GLFW}",
         "%{includeDirs.glad}",
         "%{includeDirs.ImGui}"

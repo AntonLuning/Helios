@@ -1,7 +1,7 @@
 #include "HeliosPCH.h"
 #include "Input.h"
 
-#include "Application.h"
+#include "Core/Helios/Application.h"
 
 namespace Helios {
 
