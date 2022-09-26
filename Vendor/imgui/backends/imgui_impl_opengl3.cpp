@@ -276,7 +276,7 @@ bool    ImGui_ImplOpenGL3_Init(const char* glsl_version)
         if (strncmp(vendor, "Intel", 5) == 0)
             bd->UseBufferSubData = true;
 #endif
-    //printf("GL_MAJOR_VERSION = %d\nGL_MINOR_VERSION = %d\nGL_VENDOR = '%s'\nGL_RENDERER = '%s'\n", major, minor, (const char*)glGetString(GL_VENDOR), (const char*)glGetString(GL_RENDERER)); // [DEBUG]
+    // printf("GL_MAJOR_VERSION = %d\nGL_MINOR_VERSION = %d\nGL_VENDOR = '%s'\nGL_RENDERER = '%s'\n", major, minor, (const char*)glGetString(GL_VENDOR), (const char*)glGetString(GL_RENDERER)); // [DEBUG]
 #else
     bd->GlVersion = 200; // GLES 2
 #endif

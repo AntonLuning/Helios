@@ -13,12 +13,14 @@ namespace Helios {
 		inline uint16_t GetWidth() const { return m_Width; }
 		inline uint16_t GetHeight() const { return m_Height; }
 
+#ifndef HELIOS_DISTRIBUTION
 		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "WindowResize: " << GetWidth() << ", " << GetHeight();
 			return ss.str();
 		}
+#endif
 
 		EVENT_CLASS_TYPE(WindowResize)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
@@ -37,12 +39,14 @@ namespace Helios {
 		inline float GetX() const { return m_X; }
 		inline float GetY() const { return m_Y; }
 
+#ifndef HELIOS_DISTRIBUTION
 		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "WindowMoved: " << GetX() << ", " << GetY();
 			return ss.str();
 		}
+#endif
 
 		EVENT_CLASS_TYPE(WindowMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)

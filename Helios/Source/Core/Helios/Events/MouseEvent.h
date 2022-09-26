@@ -25,12 +25,14 @@ namespace Helios {
 		MouseButtonPressedEvent(uint32_t button)
 			: MouseButtonEvent(button) {}
 
+#ifndef HELIOS_DISTRIBUTION
 		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseButtonPressed: " << GetMouseButton();
 			return ss.str();
 		}
+#endif
 
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
@@ -42,12 +44,14 @@ namespace Helios {
 		MouseButtonReleasedEvent(uint32_t button)
 			: MouseButtonEvent(button) {}
 
+#ifndef HELIOS_DISTRIBUTION
 		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseButtonReleased: " << GetMouseButton();
 			return ss.str();
 		}
+#endif
 
 		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
@@ -62,12 +66,14 @@ namespace Helios {
 		inline float GetX() const { return m_X; }
 		inline float GetY() const { return m_Y; }
 
+#ifndef HELIOS_DISTRIBUTION
 		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseMoved: " << GetX() << ", " << GetY();
 			return ss.str();
 		}
+#endif
 
 		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
@@ -86,12 +92,14 @@ namespace Helios {
 		inline float GetXOffset() const { return m_XOffset; }
 		inline float GetYOffset() const { return m_YOffset; }
 
+#ifndef HELIOS_DISTRIBUTION
 		virtual std::string ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseScrolled: " << GetXOffset() << ", " << GetYOffset();
 			return ss.str();
 		}
+#endif
 
 		EVENT_CLASS_TYPE(MouseScrolled)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)

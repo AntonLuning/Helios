@@ -11,8 +11,12 @@ namespace Helios {
 	class HELIOS_API ImGuiLayer : public Layer
 	{
 	public:
+#ifdef HELIOS_DISTRIBUTION
+		ImGuiLayer() {}
+#else
 		ImGuiLayer()
 			: Layer("ImGuiLayer") {}
+#endif // HELIOS_DISTRIBUTION
 		~ImGuiLayer() {}
 
 		virtual void OnAttach() override;

@@ -33,24 +33,32 @@ namespace Helios {
 		bool Handled = false;
 
 		virtual EventType GetEventType() const = 0;
+		virtual uint8_t GetCategoryFlags() const = 0;
+
+#ifndef HELIOS_DISTRIBUTION
 		virtual const char* GetName() const = 0;
 		virtual std::string ToString() const { return GetName(); }
-		virtual uint8_t GetCategoryFlags() const = 0;
-		
+#endif
+
 		inline bool IsInCategory(EventCategory category)
 		{
 			return GetCategoryFlags() & category;
 		}
 	};
 
+#ifdef HELIOS_DISTRIBUTION
+	#define EVENT_CLASS_TYPE(type)  static EventType GetStaticType() { return EventType::##type; }\
+									virtual EventType GetEventType() const override { return GetStaticType(); }
+#else
 	inline std::ostream& operator<<(std::ostream& os, const Event& e)
 	{
 		return os << e.ToString();
 	}
 
-#define EVENT_CLASS_TYPE(type)  static EventType GetStaticType() { return EventType::##type; }\
-								virtual EventType GetEventType() const override { return GetStaticType(); }\
-								virtual const char* GetName() const override { return #type; }
+	#define EVENT_CLASS_TYPE(type)  static EventType GetStaticType() { return EventType::##type; }\
+									virtual EventType GetEventType() const override { return GetStaticType(); }\
+									virtual const char* GetName() const override { return #type; }
+#endif
 
 #define EVENT_CLASS_CATEGORY(category) virtual uint8_t GetCategoryFlags() const override { return category; }
 

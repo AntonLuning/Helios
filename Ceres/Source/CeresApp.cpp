@@ -3,8 +3,13 @@
 class ExampleLayer : public Helios::Layer
 {
 public:
+#ifdef HELIOS_DISTRIBUTION
+	ExampleLayer() {}
+#else
 	ExampleLayer()
 		: Layer("Example") {}
+#endif
+
 	void OnUpdate() override
 	{
 		if (Helios::Input::IsKeyPressed(HELIOS_KEY_TAB))
@@ -34,6 +39,10 @@ class Ceres : public Helios::Application
 public:
 	Ceres()
 	{
+#ifdef HELIOS_DISTRIBUTION
+		::ShowWindow(::GetConsoleWindow(), SW_HIDE);
+#endif
+
 		PushLayer(new ExampleLayer());
 	}
 
