@@ -32,6 +32,9 @@ namespace Helios {
 		bool m_Running = true;
 
 		static Application* s_Instance;
+
+		// Temp
+		uint32_t m_VertexArray, m_VertexBuffer, m_IndexBuffer;
 	};
 
 	// To be defined by the client
