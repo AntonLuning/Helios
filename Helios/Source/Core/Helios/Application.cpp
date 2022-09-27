@@ -29,7 +29,7 @@ namespace Helios {
 
 			m_ImGuiLayer->Begin();
 			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
+				layer->OnUIRender();
 			m_ImGuiLayer->End();
 
 			m_Window->OnUpdate();

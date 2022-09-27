@@ -2,15 +2,31 @@
 
 extern Helios::Application* Helios::CreateApplication();
 
-int main(int argC, char** argV)
-{
-	Helios::Log::Init();
+namespace Helios {
 
-	auto app = Helios::CreateApplication();
-	app->Run();
-	delete app;
+	int Main(int argC, char** arg)
+	{
+		Helios::Log::Init();
 
-	Helios::Log::Shutdown();
+		auto app = Helios::CreateApplication();
+		app->Run();
+		delete app;
 
-	return 0;
+		Helios::Log::Shutdown();
+
+		return 0;
+	}
+
 }
+
+#ifdef HELIOS_DISTRIBUTION
+	int APIENTRY WinMain(HINSTANCE hInst, HINSTANCE hInstPrev, PSTR cmdline, int cmdshow)
+	{
+		return Helios::Main(__argc, __argv);
+	}
+#else
+	int main(int argC, char** argV)
+	{
+		return Helios::Main(argC, argV);
+	}
+#endif // HELIOS_DISTRIBUTION

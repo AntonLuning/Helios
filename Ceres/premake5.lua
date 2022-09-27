@@ -39,6 +39,7 @@ project "Ceres"
 		optimize "On"
 
 	filter "configurations:Distribution"
+		kind "WindowedApp"
 		defines { "HELIOS_DISTRIBUTION" }
 		runtime "Release"
 		optimize "Full"

@@ -16,11 +16,13 @@ public:
 			HELIOS_TRACE("Tab key is pressed (poll)");
 	}
 
-	virtual void OnImGuiRender() override
+	virtual void OnUIRender() override
 	{
-	/*	ImGui::Begin("Test");
+		ImGui::Begin("Test");
 		ImGui::Text("Hello World");
-		ImGui::End();*/
+		ImGui::End();
+
+		ImGui::ShowDemoWindow();
 	}
 
 	void OnEvent(Helios::Event& event) override
@@ -39,10 +41,6 @@ class Ceres : public Helios::Application
 public:
 	Ceres()
 	{
-#ifdef HELIOS_DISTRIBUTION
-		::ShowWindow(::GetConsoleWindow(), SW_HIDE);
-#endif
-
 		PushLayer(new ExampleLayer());
 	}
 
