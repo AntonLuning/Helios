@@ -17,4 +17,5 @@
 #include <glad/glad.h>
 #include <imgui.h>
 
+#include "Core/Helios/Base.h"
 #include "Core/Helios/Log.h"

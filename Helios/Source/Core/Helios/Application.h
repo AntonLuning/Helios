@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Base.h"
 #include "Window.h"
 #include "LayerStack.h"
 #include "ImGui/ImGuiLayer.h"

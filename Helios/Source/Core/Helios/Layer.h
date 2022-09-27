@@ -2,7 +2,6 @@
 
 #include "HeliosPCH.h"
 
-#include "Base.h"
 #include "Events/Event.h"
 
 namespace Helios {

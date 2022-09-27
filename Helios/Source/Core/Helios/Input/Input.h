@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Core/Helios/Base.h"
-
 namespace Helios {
 
 	class Input
