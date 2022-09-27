@@ -2,7 +2,7 @@
 
 #include "HeliosPCH.h"
 
-#include "Core/Helios/Core.h"
+#include "Core/Helios/Base.h"
 
 namespace Helios {
 
