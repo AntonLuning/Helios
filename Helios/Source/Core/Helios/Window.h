@@ -5,6 +5,7 @@
 #include "Events/WindowEvent.h"
 #include "Events/KeyEvent.h"
 #include "Events/MouseEvent.h"
+#include "Renderer/GraphicsContext.h"
 
 namespace Helios {
 
@@ -46,6 +47,7 @@ namespace Helios {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{

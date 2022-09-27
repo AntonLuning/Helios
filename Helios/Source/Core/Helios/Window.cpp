@@ -1,7 +1,6 @@
 #include "HeliosPCH.h"
 #include "Window.h"
 
-
 namespace Helios {
 
 	static bool s_GLFWInitialized = false;
@@ -42,9 +41,10 @@ namespace Helios {
 		}
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, props.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		HELIOS_CORE_ASSERT(status, "Failed to initialize glad!");
+	
+		m_Context = new GraphicsContext(m_Window);
+		m_Context->Init();
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
@@ -168,7 +168,7 @@ namespace Helios {
 	void Window::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
 	}
 
 	void Window::SetVSync(bool enabled)
