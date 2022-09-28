@@ -6,7 +6,7 @@ namespace Helios {
 
 #define BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
 
-	enum class EventType
+	enum class EventType : uint8_t
 	{
 		None = 0,
 		WindowResize, WindowMoved, WindowFocus, WindowLostFocus, WindowClose,

@@ -4,13 +4,18 @@
 #include "LayerStack.h"
 #include "ImGui/ImGuiLayer.h"
 
+// Temp
+#include "Renderer/Buffer.h"
+#include "Renderer/Shader.h"
+#include "Renderer/VertexArray.h"
+
 namespace Helios {
 
 	class Application
 	{
 	public:
 		Application();
-		virtual ~Application() {}
+		virtual ~Application() = default;
 
 		void Run();
 
@@ -34,7 +39,11 @@ namespace Helios {
 		static Application* s_Instance;
 
 		// Temp
-		uint32_t m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexArray> m_VertexArray;
+
+		std::shared_ptr<Shader> m_BlueShader;
+		std::shared_ptr<VertexArray> m_SquareVA;
 	};
 
 	// To be defined by the client

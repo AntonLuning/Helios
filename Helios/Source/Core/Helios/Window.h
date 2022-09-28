@@ -23,9 +23,7 @@ namespace Helios {
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 
-		static Window* Create(const WindowProps& props = WindowProps());
-
-		Window(const WindowProps& props);
+		Window(const WindowProps& props = WindowProps());
 		~Window();
 
 		void OnUpdate();

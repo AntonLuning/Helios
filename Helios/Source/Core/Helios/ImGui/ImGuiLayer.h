@@ -16,7 +16,7 @@ namespace Helios {
 		ImGuiLayer()
 			: Layer("ImGuiLayer") {}
 #endif // HELIOS_DISTRIBUTION
-		~ImGuiLayer() {}
+		~ImGuiLayer() = default;
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;

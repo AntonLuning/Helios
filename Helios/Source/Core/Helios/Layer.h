@@ -22,14 +22,13 @@ namespace Helios {
 #endif // HELIOS_DISTRIBUTION
 
 	public:
-		virtual ~Layer() {}
+		virtual ~Layer() = default;
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
 		virtual void OnUpdate() {}
 		virtual void OnUIRender() {}
 		virtual void OnEvent(Event& event) {}
-
 	};
 
 }

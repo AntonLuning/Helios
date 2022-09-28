@@ -10,11 +10,6 @@ namespace Helios {
 		HELIOS_CORE_ERROR("GLFW Error ({0}): \"{1}\"", error, description);
 	}
 
-	Window* Window::Create(const WindowProps& props)
-	{
-		return new Window(props);
-	}
-
 	Window::Window(const WindowProps& props)
 	{
 		Init(props);
